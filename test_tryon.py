@@ -23,12 +23,12 @@ def CreateDataset(opt):
         dataset.initialize(opt, mode='test', stage='gen')
     return dataset
 
-torch.cuda.set_device(opt.local_rank)
+torch.cuda.set_device(0)
 torch.distributed.init_process_group(
     'nccl',
     init_method='env://'
 )
-device = torch.device(f'cuda:{opt.local_rank}')
+device = torch.device(f'cuda:0')
 
 train_data = CreateDataset(opt)
 train_sampler = DistributedSampler(train_data)
