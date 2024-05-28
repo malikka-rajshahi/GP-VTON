@@ -41,9 +41,9 @@ def process_images(input_folder, output_folder):
 
         print(f"Cloth mask saved at: {output_path}")
 
-input_folder = "SD-VITON/dataroot/test/cloth"
-custom_input = "SD-VITON/dataroot/test/image"
-output_folder = "SD-VITON/dataroot/test/cloth-mask"
+input_folder = "dataroot/test/cloth"
+custom_input = "dataroot/test/image"
+output_folder = "dataroot/test/cloth-mask"
 process_images(input_folder, output_folder)
 process_images(custom_input, output_folder)
 
